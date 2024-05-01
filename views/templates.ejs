@@ -1,0 +1,154 @@
+<!-- Student Accordion Template -->
+<template>
+	<div class="student-accordion-item accordion-item">
+		<h2 class="accordion-header" id="">
+			<button
+				class="accordion-button student-button d-block text-center"
+				type="button"
+				data-bs-toggle="collapse"
+				data-bs-target=""
+				aria-expanded="false"
+				aria-controls=""
+			></button>
+		</h2>
+		<div id="" class="accordion-collapse collapse" aria-labelledby="">
+			<div class="accordion-body">
+				<img src="" alt="" />
+				<div class="student-data">
+					<p><strong class="stud">ID:&ensp;</strong><span></span></p>
+					<p><strong class="stud">Name:&ensp;</strong><span></span></p>
+					<p><strong class="stud">Age:&ensp;</strong><span></span></p>
+					<p><strong class="stud">Gender:&ensp;</strong><span></span></p>
+					<p><strong class="stud">College:&ensp;</strong><span></span></p>
+					<p><strong class="stud">Batch:&ensp;</strong><span></span></p>
+					<p><strong class="stud">Status:&ensp;</strong><span></span></p>
+					<p>
+						<strong class="stud">DSA Score:&ensp;</strong><span></span>
+					</p>
+					<p>
+						<strong class="stud">React Score:&ensp;</strong><span></span>
+					</p>
+					<p>
+						<strong class="stud">Web Development Score:&ensp;</strong
+						><span></span>
+					</p>
+				</div>
+				<div class="student-interviews table-responsive">
+					<table class="table table-warning table-hover caption-top">
+						<caption>
+							Interviews
+						</caption>
+						<thead class="table-dark">
+							<tr>
+								<th scope="col">Company</th>
+								<th scope="col">Date</th>
+								<th scope="col">Result</th>
+							</tr>
+						</thead>
+						<tbody class="table-group-divider"></tbody>
+					</table>
+				</div>
+				<button class="delete-student-button" data-id="">
+					Delete&ensp;<i class="fa-solid fa-trash"></i>
+				</button>
+			</div>
+		</div>
+	</div>
+</template>
+
+<!-- Interview Accordion Template -->
+<template>
+	<div class="interview-accordion-item accordion-item" id="accordion-item-">
+		<h2 class="accordion-header" id="interview-heading-">
+			<button
+				class="accordion-button interview-button d-block text-center"
+				type="button"
+				data-bs-toggle="collapse"
+				data-bs-target="#interview-"
+				aria-expanded="false"
+				aria-controls="interview-"
+			></button>
+		</h2>
+		<div
+			id="interview-"
+			class="accordion-collapse collapse"
+			aria-labelledby="interview-heading-"
+		>
+			<div class="accordion-body">
+				<div class="interview-data">
+					<p>
+						<strong
+							><i class="fa-regular fa-calendar"></i
+							>&ensp;Date:&ensp;</strong
+						>
+					</p>
+					<i
+						class="fa-solid fa-trash delete-interview-button"
+						data-id=""
+					></i>
+				</div>
+				<div class="students-list">
+					<h5>Students List</h5>
+					<form
+						action="/interviews/students/add"
+						method="post"
+						id=""
+					></form>
+				</div>
+				<p>
+					<i
+						class="fa-solid fa-circle-plus add-student-BTN"
+						id="add-student-"
+					></i>
+				</p>
+			</div>
+		</div>
+	</div>
+</template>
+
+<!-- Students List Template -->
+<template>
+	<div class="student" id="">
+		<div class="form-group hide">
+			<select
+				class="form-select form-control"
+				id="student"
+				name="name"
+				required
+			></select>
+		</div>
+		<div class="form-group hide">
+			<select
+				class="form-select form-control"
+				id="result"
+				name="result"
+				required
+			>
+				<option value="pass">Pass</option>
+				<option value="fail">Fail</option>
+				<option value="on hold">On Hold</option>
+				<option value="not attended">Not Attended</option>
+				<option value="to be decided">To Be Decided</option>
+			</select>
+		</div>
+		<button class="add-student-interview hide" data-id="">
+			Add Student&ensp;<i class="fa-solid fa-circle-plus"></i>
+		</button>
+		<button class="delete-interview-slot hide" data-id="">
+			Delete Interview Slot&ensp;<i class="fa-solid fa-trash"></i>
+		</button>
+		<button class="update-student-interview hide" data-id="">
+			Update Student&ensp;<i class="fa-solid fa-arrow-rotate-left"></i>
+		</button>
+		<div class="fixed hide">
+			<p><strong>Name:&ensp;</strong><span></span></p>
+			<p><strong>Result:&ensp;</strong><span></span></p>
+		</div>
+		<button class="edit-student-interview hide" data-id="">
+			Edit&ensp;<i class="fa-solid fa-pen-to-square"></i>
+		</button>
+		<button class="delete-student-interview hide" data-id="">
+			Delete&ensp;<i class="fa-solid fa-trash"></i>
+		</button>
+	</div>
+</template>

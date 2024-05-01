@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="<%= assetPath('css/jobs.css') %>" />
+<script defer src="<%= assetPath('js/jobs.js') %>"></script>
+
+<!-- If User is logged in -->
+<% if (locals.user) { %>
+<!-- Job Portal Page -->
+<div class="jobPortal">
+	<div class="jobPage">
+		<!-- Job Card -->
+		<div class="card w-25" style="display: none" data-jobs="<%= jobs %>">
+			<h5 class="card-header">Company Name</h5>
+			<div class="card-body">
+				<h5 class="card-title">Job Title</h5>
+				<p class="card-text"><span>Interview Date</span></p>
+				<p class="card-text"><span>Job Location</span></p>
+				<p style="text-align: center">
+					<a href="Job URL" target="_blank" class="btn">Apply Now</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<% } %>

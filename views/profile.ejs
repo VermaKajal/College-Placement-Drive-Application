@@ -1,0 +1,85 @@
+<link rel="stylesheet" href="<%= assetPath('css/profile.css') %>" />
+<script defer src="<%= assetPath('js/update-profile.js') %>"></script>
+
+<!-- If User is logged in -->
+<% if (locals.user) { %>
+<input
+	type="hidden"
+	id="employeeProfile"
+	value="<%= locals.profile_user.id %>"
+/>
+<!-- If the Logged In User matches with the Employee's Profile then show the update form -->
+<div class="profilePage">
+	<div id="updateProfile">
+		<% if(locals.user.id == profile_user.id){ %>
+		<!-- Update Profile Form -->
+		<form
+			action="/update/<%= profile_user.id %>"
+			method="post"
+			enctype="multipart/form-data"
+		>
+			<h2>Update Profile</h2>
+			<div class="form-container">
+				<div class="upload-wrapper">
+					<img
+						src="<%= profile_user.avatarPath %>"
+						alt="Employee Image"
+						this.
+					/>
+					<button class="btn btn-grad"></button>
+					<input
+						type="file"
+						name="avatar"
+						class="image"
+						placeholder="Profile Picture"
+						accept="image/png, image/gif, image/jpeg, image/jpg, image/svg"
+						onerror="this.onerror=null; this.src=`<%= assetPath('images/empty-avatar.png') %>`"
+					/>
+				</div>
+				<div class="info">
+					<div class="form-group">
+						<label for="name">Name</label>
+						<input
+							type="text"
+							class="form-control"
+							id="name"
+							aria-describedby="nameHelp"
+							placeholder="Enter your Name"
+							name="name"
+							value="<%= profile_user.name %>"
+							required
+						/>
+					</div>
+					<div class="form-group">
+						<label for="exampleInputEmail1">Email Address</label>
+						<input
+							type="email"
+							class="form-control"
+							id="email"
+							aria-describedby="emailHelp"
+							placeholder="Enter Email"
+							name="email"
+							value="<%= profile_user.email %>"
+							required
+						/>
+					</div>
+					<div class="form-group">
+						<label for="exampleInputPassword1">Password</label>
+						<input
+							type="password"
+							class="form-control"
+							id="password"
+							placeholder="Password"
+							name="password"
+							value="<%= profile_user.password %>"
+							required
+						/>
+					</div>
+					<button type="submit" class="btn submit-btn">Submit</button>
+				</div>
+			</div>
+		</form>
+		<% } %>
+	</div>
+</div>
+<% } %>
